@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --color-primary: #2563EB;
+  --color-dark: #0F0F0F;
+  --color-light: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-light text-dark text-base antialiased selection:bg-primary/30 selection:text-dark;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+}
+
+/* Custom Utilities for elegant glass and overlay */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-md border border-white/10;
+}
